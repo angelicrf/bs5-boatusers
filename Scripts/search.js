@@ -34,12 +34,14 @@ const emailInfo = () => {
     fetch("https://api.mailjet.com/v3.1/send", {
         method: 'POST',
         body: thisBody,
-        mode: 'no-cors',
-        //credentials: 'same-origin',
+        //mode: 'no-cors',
+        withCredentials: true,
+        credentials: 'include',
         header: {
             "Access-Control-Allow-Origin": "*",
+            "Accept": 'application/json',
             "Content-Type": "application/json",
-            'Authorization': 'Basic ' + btoa('6cd68fea322c1e176923b684b4aa43d8:abf29ab2bd05fac2c4af40387302c130')
+            "Authorization": "Basic " + btoa('6cd68fea322c1e176923b684b4aa43d8:abf29ab2bd05fac2c4af40387302c130')
         }
         //auth: { username: '6cd68fea322c1e176923b684b4aa43d8', password: 'abf29ab2bd05fac2c4af40387302c130' },
     })
