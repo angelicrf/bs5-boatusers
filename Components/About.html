@@ -62,7 +62,9 @@
         pariatur nemo!</div>
     </div>
     <div id="searchValue"></div>
-    <button type="button" class="btn btn-primary" onclick="emailInfo();">Send Email</button>
+    <form class="d-flex my-2 my-lg-0" onsubmit="event.preventDefault();emailInfo();">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Send Email</button>
+    </form>
   </main>
   <footer>
   </footer>
