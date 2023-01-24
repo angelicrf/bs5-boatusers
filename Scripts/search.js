@@ -37,6 +37,7 @@ const emailInfo = () => {
         body: thisBody,
         //credentials: 'same-origin',
         header: {
+            "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
             'Authorization': 'Basic ' + btoa('6cd68fea322c1e176923b684b4aa43d8:abf29ab2bd05fac2c4af40387302c130')
         }
