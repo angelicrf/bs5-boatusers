@@ -31,10 +31,10 @@ const emailInfo = () => {
             }
         ]
     })
-
     fetch("https://api.mailjet.com/v3.1/send", {
         method: 'POST',
         body: thisBody,
+        mode: 'no-cors',
         //credentials: 'same-origin',
         header: {
             "Access-Control-Allow-Origin": "*",
