@@ -36,12 +36,12 @@ const emailInfo = () => {
         body: thisBody,
         withCredentials: true,
         credentials: 'include',
-        header: {
-            "Access-Control-Allow-Origin": "*",
-            "Accept": 'application/json',
-            "Content-Type": "application/json",
+        header: new Headers({
+            "Access-Control-Allow-Origin": "https://angelicrf.github.io/bs5-boatusers",
+            "Accept": "*",
+            "Content-Type": "application/x-www-form-urlencoded",
             "Authorization": "Basic " + btoa('6cd68fea322c1e176923b684b4aa43d8:abf29ab2bd05fac2c4af40387302c130')
-        }
+        })
         //auth: { username: '6cd68fea322c1e176923b684b4aa43d8', password: 'abf29ab2bd05fac2c4af40387302c130' },
     })
         .then(response => response.text())
