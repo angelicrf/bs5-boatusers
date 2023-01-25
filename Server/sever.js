@@ -21,7 +21,7 @@ app.post('/api/user/:clName', async (req, res) => {
     console.log(`postParam ${JSON.stringify(getName)}`)
 
     if (JSON.stringify(getName) != null) {
-        let getdata = await postEmail(JSON.stringify(getName), req.body.message, req.body.message)
+        let getdata = await postEmail(JSON.stringify(getName), req.body.emailBody, req.body.emailSubject)
         if (getdata != null) {
             return res.json({
                 msg: "PostUserclName",
