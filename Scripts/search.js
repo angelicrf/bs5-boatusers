@@ -34,14 +34,17 @@ const emailInfo = () => {
     fetch("https://api.mailjet.com/v3.1/send", {
         method: 'POST',
         body: thisBody,
-        withCredentials: true,
         credentials: 'include',
         header: new Headers({
             "Access-Control-Allow-Origin": "https://angelicrf.github.io/bs5-boatusers",
-            "Accept": "*",
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json, text/plain, */*",
+            "Access-Control-Allow-Methods": "POST",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Headers": "*",
+            "Content-Type": "text/html",
             "Authorization": "Basic " + btoa('6cd68fea322c1e176923b684b4aa43d8:abf29ab2bd05fac2c4af40387302c130')
-        })
+        }),
+        redirect: 'follow'
         //auth: { username: '6cd68fea322c1e176923b684b4aa43d8', password: 'abf29ab2bd05fac2c4af40387302c130' },
     })
         .then(response => response.text())
