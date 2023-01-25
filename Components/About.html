@@ -63,9 +63,20 @@
         pariatur nemo!</div>
     </div>
     <div id="searchValue"></div>
-    <form class="d-flex my-2 my-lg-0" onsubmit="event.preventDefault();emailInfo();">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Send Email</button>
-    </form>
+    <div class="container d-flex align-items-center justify-content-center bg-primary">
+      <form onsubmit="event.preventDefault();emailInfo();">
+        <div> <label>Subject</label></div>
+
+        <div><input type="text" name="emailSubject" id="emailSubject" class="form-control me-sm-2" /></div>
+        <div><label>Message</label></div>
+        <div><textarea name="emailBody" id="emailBody" cols="30" rows="10" class="form-control me-sm-2"></textarea>
+        </div>
+
+        <div><button class="btn btn-outline-success mt-2 mb-2" type="submit">Send Email</button></div>
+
+      </form>
+    </div>
+
   </main>
   <footer>
   </footer>

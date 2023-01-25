@@ -12,26 +12,32 @@ const setSearchValue = (thisValue) => {
 const emailInfo = async () => {
 
     console.log('btn clicked')
-    // two inputs and get value in a form
 
-    try {
-        //change url after deploy
-        const response = await fetch('http://localhost:3000/api/user/angy', {
-            method: "POST",
-            body: JSON.stringify({
-                "emailBody": "emailTextBody",
-                "emailSubject": "emailSubject"
-            }),
-            headers: {
-                "Content-Type": "application/json"
+    let getSubject = document.getElementById('emailSubject')
+    let getEmailBody = document.getElementById('emailBody')
+
+    if (getSubject.value != null && getEmailBody.value != null) {
+        try {
+            //change url after deploy
+            const response = await fetch('https://bu5-boatuser-server-kjqm.vercel.app/api/user/angy', {
+                method: "POST",
+                body: JSON.stringify({
+                    "emailBody": `${getEmailBody.value}`,
+                    "emailSubject": `${getSubject.value}`
+                }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+
+            })
+            if (response.ok) {
+                return response.json().then(val => console.log(val))
             }
 
-        })
-        if (response.ok) {
-            return response.json().then(val => console.log(val))
+        } catch (error) {
+
         }
-
-    } catch (error) {
-
+    } else {
+        alert("Input is Empty!")
     }
 }
