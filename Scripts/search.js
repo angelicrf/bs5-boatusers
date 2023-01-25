@@ -12,6 +12,21 @@ const setSearchValue = (thisValue) => {
 const emailInfo = () => {
 
     console.log('btn clicked')
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            title: 'foo',
+            body: 'bar',
+            userId: 1
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    })
+        .then(res => res.json())
+        .then(console.log)
+        .catch(err => console.log(err))
+
     let thisBody = JSON.stringify({
         "Messages": [
             {
@@ -44,7 +59,7 @@ const emailInfo = () => {
             "Content-Type": "text/html",
             "Authorization": "Basic " + btoa('6cd68fea322c1e176923b684b4aa43d8:abf29ab2bd05fac2c4af40387302c130')
         }),
-        redirect: 'follow'
+        redirect: 'follow',
         //auth: { username: '6cd68fea322c1e176923b684b4aa43d8', password: 'abf29ab2bd05fac2c4af40387302c130' },
     })
         .then(response => response.text())
