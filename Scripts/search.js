@@ -51,9 +51,12 @@ const emailInfo = () => {
     myHeaders.append("Accept", "application/json, text/plain, */*")
     myHeaders.append("Access-Control-Allow-Methods", "POST")
     myHeaders.append("Access-Control-Allow-Headers", "*")
+    myHeaders.append("access-control-request-headers", "*")
+    myHeaders.append("access-control-request-method", "POST")
     myHeaders.append("Access-Control-Allow-Credentials", "true")
     myHeaders.append("Content-Type", "text/html")
     myHeaders.append("Authorization", "Basic " + btoa('6cd68fea322c1e176923b684b4aa43d8:abf29ab2bd05fac2c4af40387302c130'))
+
     fetch("https://api.mailjet.com/v3.1/send", {
         method: 'POST',
         body: thisBody,
